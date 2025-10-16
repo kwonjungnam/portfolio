@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap');
+
+:root {
+  --primary: #232946;
+  --secondary: #eebbc3;
+  --bg: #fffffe;
+  --accent: #d4939d;
+  --shadow: rgba(34, 47, 70, 0.05) 0px 4px 24px 0px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  padding: 24px 32px;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: var(--shadow);
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.nav-list li a:hover {
+  color: var(--secondary);
+}
+
+.hero {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  position: relative;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34,41,80, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  max-width: 98vw;
+  padding: 32px 10vw;
+  background: rgba(34,41,80,0.08);
+  border-radius: 14px;
+}
+.hero-content h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  color: #fff;
+}
+.hero-content p {
+  margin-top: 18px;
+  margin-bottom: 28px;
+  font-size: 1.2rem;
+  color: #f7e9e3;
+}
+.cta-button {
+  padding: 14px 32px;
+  background: var(--secondary);
+  color: var(--primary);
+  border: none;
+  border-radius: 99px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, color 0.18s;
+}
+.cta-button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+/* hero-img 제거 및 반응형 수정 */
+.hero-img { display: none !important; }
+@media (max-width: 960px) {
+  .hero-content {
+    padding: 24px 2vw;
+  }
+}
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.35rem;
+  }
+  .hero-content {
+    padding: 16px 2vw;
+  }
+}
+
+.projects {
+  padding: 64px 16px 32px;
+  background: var(--bg);
+}
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--primary);
+}
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+.project-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 0 0 18px 0;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.18s;
+}
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+}
+.project-card h3 {
+  margin: 16px 0 8px;
+  font-size: 1.15rem;
+}
+.project-card p {
+  color: #414a67;
+  font-size: 1rem;
+}
+
+.contact {
+  padding: 48px 16px 56px;
+  background: var(--secondary);
+}
+.contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+#contactForm {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 32px 26px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group label {
+  font-size: 0.9rem;
+}
+.form-group input, .form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #c7cad9;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+}
+.form-group textarea {
+  min-height: 80px;
+}
+button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 6px;
+  transition: background 0.18s;
+}
+button[type="submit"]:hover {
+  background: var(--accent);
+}
+#formMessage {
+  margin-top: 10px;
+  font-size: 0.97rem;
+  color: var(--primary);
+}
+
+.footer {
+  padding: 18px 0;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 960px) {
+  .hero {
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px 6vw 24px 6vw;
+  }
+  .hero-content, .hero-img {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .projects-list {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 14px 10px;
+    gap: 8px;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-list {
+    gap: 1.1rem;
+  }
+  .hero-content h1 {
+    font-size: 1.18rem;
+  }
+  .projects h2, .contact h2 {
+    font-size: 1.35rem;
+  }
+  .project-card {
+    width: 96%;
+  }
+}
